@@ -95,13 +95,23 @@ view application
 create Dockerfile
 cmd we've to add 
               FROM python:3.7
+              
               COPY . /app
+              
               WORKDIR /app
+              
               RUN pip install -r requirements.txt
+              
               EXPOSE $PORT
+              
               CMD gunicorn --workers=4 --bind 0.0.0.0:$PORT app:app create folder   
+       
        -> .github
-       -> workflows -> create file -> main.yaml ( Provide heroku cred in this file )
+       
+       -> workflows -> create file -> main.yaml ( Provide heroku cred ( Heroku api_key, mail, app_name) in this file, by adding it to Action secrets from gitHUB )
+       -> git add.
+          git commit -m "Dockers is created"
+          git push origin 
        
 
        
